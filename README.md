@@ -25,6 +25,7 @@ This is a Node.js API for the Plan My Vacation application. It provides endpoint
 4. Create a `.env` file in the root directory and provide the following environment variables:
 
    ```
+   TOKEN="your-token"
    PORT=3000
    ```
 
