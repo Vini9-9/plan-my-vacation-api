@@ -1,19 +1,15 @@
 {
-  "type": "module",
-  "name": "api",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "scripts": {
-    "vercel-build": "ts-node-dev --transpile-only src/server.ts",
-    "dev": "ts-node-dev --transpile-only src/server.ts",
-    "test": "karma start",
-    "build": "webpack -p",
-    "swagger-autogen": "node src/swagger.js"
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.3",
+    "fs": "^0.0.1-security",
+    "moment": "^2.29.2",
+    "node-fetch": "2.0",
+    "swagger-autogen": "^2.22.0",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^4.6.0"
   },
-  "keywords": [],
-  "author": "Vinicius Pessoa da Silva",
-  "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.13",
     "@types/jasmine": "^4.0.2",
@@ -29,19 +25,26 @@
     "nodemon": "^2.0.22",
     "ts-loader": "^9.2.8",
     "ts-node-dev": "^1.1.8",
-    "typescript": "^4.6.3",
+    "tsup": "^7.1.0",
+    "tsx": "^3.12.7",
+    "typescript": "^4.9.5",
     "webpack": "^5.71.0",
     "webpack-dev-server": "^4.7.4"
   },
-  "dependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.1",
-    "express": "^4.17.3",
-    "fs": "^0.0.1-security",
-    "moment": "^2.29.2",
-    "node-fetch": "2.0",
-    "swagger-autogen": "^2.22.0",
-    "swagger-jsdoc": "^6.2.8",
-    "swagger-ui-express": "^4.6.0"
-  }
+  "name": "plan-my-vacation-api",
+  "description": "This is a Node.js API for the Plan My Vacation application. It provides endpoints to get suggested periods to go on vacation.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "engines": {
+    "node": "18"
+  },
+  "scripts": {
+    "dev": "tsx src/server.ts",
+    "build": "tsup src",
+    "start": "node dist/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Vinicius Pessoa da Silva",
+  "license": "ISC"
 }
