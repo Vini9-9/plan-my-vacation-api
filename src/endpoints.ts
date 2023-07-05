@@ -5,5 +5,9 @@ export default function configureEndpoints(app: Express) {
     const getFeriadosController = new GetFeriadosController();
 
     app.post('/feriados', getFeriadosController.handle);
+
+    app.get('/', (req, res) => {
+        res.redirect('/api-docs');
+      });
 }
   
